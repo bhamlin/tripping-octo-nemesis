@@ -6,6 +6,12 @@ MODULE_VER = '1.0'
 def START(db, *args):
     """Remove Darkstar account sessions"""
     
+    import argparse
+    AP = argparse.ArgumentParser('ffxi-tools ' + MODULE_NAME,
+            description='Lists active sessions')
+    
+    args = AP.parse_args(args=args)
+
     sessions = db.get('''
  select acc.login, c.charname
  from accounts_sessions sess

@@ -7,7 +7,8 @@ def START(db, *args):
     """Remove Darkstar account sessions"""
     
     import argparse
-    AP = argparse.ArgumentParser('ffxi-tools ' + MODULE_NAME)
+    AP = argparse.ArgumentParser('ffxi-tools ' + MODULE_NAME,
+            description='Removes a session')
     AP.add_argument('login', metavar='login_name',
             help='The login for the account')
     
