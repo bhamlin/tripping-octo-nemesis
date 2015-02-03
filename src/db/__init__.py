@@ -54,3 +54,20 @@ def get(query, columns=None):
     cur.close()
     db.close()
     return output
+
+def run(query, columns=None):
+    _L = __CONFIG['login_darkstar']
+    host = _L['mysql_host']
+    port = _L['mysql_port']
+    user = _L['mysql_login']
+    passwd = _L['mysql_password']
+    dbname = _L['mysql_database']
+    pass
+    db = __M.connect(host=host, port=port, user=user, passwd=passwd,
+            db=dbname, conv={ __M.FIELD_TYPE.LONG: int })
+    cur = db.cursor()
+    
+    cur.execute(query)
+    
+    cur.close()
+    db.close()

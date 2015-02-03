@@ -6,10 +6,12 @@ MODULE_VER = '1.0'
 def START(db, *args):
     """List FFXI accounts in the database"""
     
-    logins = db.get('select id, login from accounts', ('id', 'name'));
+    logins = db.get('select id, login from accounts order by login', ('accid', 'login'));
 
     if logins:
-        print 'id\tname'
-        print '----\t----'
+        print 'accid            login'
+        print '-----            -----'
         for login in logins:
-            print '%s\t%s' % (login['id'], login['name'])
+            print '%-16s %s' % (login['accid'], login['login'])
+    else:
+        print 'No accounts found'
