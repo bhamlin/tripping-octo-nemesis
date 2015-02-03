@@ -5,8 +5,8 @@ import argparse
 LIST_MODULES = 'list-modules'
 
 AP = argparse.ArgumentParser()
-AP.add_argument('--config', '-c', default='~/darkstar/conf/', metavar='PATH',
-        help='Path for Darkstar config (Default: ~/darkstar/conf/)')
+AP.add_argument('--config', '-c', default='/etc/darkstar/conf/', metavar='PATH',
+        help='Path for Darkstar config (Default: /etc/darkstar/conf/)')
 AP.add_argument('module', nargs='?',
         help='Module to use, or "%s" to see a list of available modules' % (LIST_MODULES))
 AP.add_argument('options', nargs='*',
