@@ -7,8 +7,8 @@ LIST_MODULES = 'list-modules'
 
 AP = argparse.ArgumentParser('ffxi-tools',
         description='Tools for modifying the Darkstar database')
-AP.add_argument('--config', '-c', default='/etc/darkstar/', metavar='PATH',
-        help='Path for Darkstar config (Default: /etc/darkstar/)')
+AP.add_argument('-c', '--config', default='/etc/darkstar/', dest='config',
+        metavar='PATH', help='Path for Darkstar config (Default: /etc/darkstar/)')
 AP.add_argument('module', nargs='?',
         help='Module to use, or "%s" to see a list of available modules' % (LIST_MODULES))
 AP.add_argument('options', nargs='*',
